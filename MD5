@@ -1,5 +1,5 @@
 7cde68d3dea770ba7f08f1000266d40e *ChangeLog
-00b2cb3728f634d99be8d8fb99deb013 *DESCRIPTION
+94c286e3918d9899c7b6dbe14820df7c *DESCRIPTION
 61929ba2a6b83db76e4a07a97f76acd9 *LICENSE
 1ebac0f2b642d58842414fbc93774dbb *NAMESPACE
 91c309c1aaf577053f88099d5ffffc8b *R/RcppExports.R
@@ -115,7 +115,7 @@ f024125ed298d477346640701afca18b *man/write_pli.Rd
 4bcbf90fb588025fb0a4eae2e2e349b9 *src/Makevars.in
 ddc95531f6611c35d7aff343b352d651 *src/Makevars.win
 d98bc35bbb8efa69cf1779c4f0580251 *src/RcppExports.cpp
-f2f1c7fdccb24ecedb2afb37606a323a *src/TreeData.hpp
+531125a4b1884094d8b9cf6543822272 *src/TreeData.hpp
 a27b5d1719414dd8e51531342dea25d8 *src/aphylo_pruner.cpp
 c7c1969e1b59ab91a6bf7a305d565682 *src/auc.cpp
 565d31a6071f889d9c63a2e57e47395a *src/loglikelihood.h

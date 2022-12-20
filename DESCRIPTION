@@ -8,7 +8,7 @@ Authors@R: c(person("George", "Vega Yon", role=c("aut","cre"),
          5P01CA196569-02"),
          person("USC Biostatistics", role = "cph")
          )
-Version: 0.3-1
+Version: 0.3-2
 Description: Implements a parsimonious evolutionary model to analyze and
   predict gene-functional annotations in phylogenetic trees as described in Vega
   Yon et al. (2021) <doi:10.1371/journal.pcbi.1007948>. With a focus on
@@ -31,10 +31,10 @@ BugReports: https://github.com/USCbiostats/aphylo/issues
 Classification/MSC: 90C35, 90B18, 91D30
 License: MIT + file LICENSE
 NeedsCompilation: yes
-Packaged: 2022-12-19 17:08:01 UTC; george
+Packaged: 2022-12-20 22:10:33 UTC; george
 Author: George Vega Yon [aut, cre] (<https://orcid.org/0000-0002-3171-0844>),
   National Cancer Institute (NCI) [fnd] (Grant Number 5P01CA196569-02),
   USC Biostatistics [cph]
 Maintainer: George Vega Yon <g.vegayon@gmail.com>
 Repository: CRAN
-Date/Publication: 2022-12-20 17:30:05 UTC
+Date/Publication: 2022-12-21 00:10:08 UTC
