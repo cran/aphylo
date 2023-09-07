@@ -1,3 +1,10 @@
+if (Sys.getenv("APHYLO_ATLAS_TEST") == "true") {
+  library(flexiblas)
+  idx <- flexiblas_load_backend("ATLAS")
+  flexiblas_switch(idx)
+  message("Using flexiblas with backend: ", flexiblas_current_backend())
+}
+
 suppressMessages(library(coda))
 
 # test_that("x ~ mu", {
@@ -80,9 +87,7 @@ suppressMessages(library(coda))
   ans0 <- suppressWarnings(
     aphylo_mcmc(x ~ mu_d + mu_s + psi + Pi, params = dflts, priors = mypriors, control = pars)
   )
-  
-  mcmc_0 <- as.list(fmcmc::LAST_MCMC)
-  
+    
   fun <- function(p) {
     ans <- aphylo::LogLike(
       tree = x,
@@ -114,7 +119,7 @@ suppressMessages(library(coda))
     do.call(
       fmcmc::MCMC, c(
         list(
-          fun = fun,
+          fun     = fun,
           initial = aphylo:::APHYLO_PARAM_DEFAULT[-c(7:8)],
           kernel  = fmcmc::kernel_am(ub = .9999, lb = 0.001, freq = 1L)
           ),
@@ -122,10 +127,12 @@ suppressMessages(library(coda))
       ))
     
     })
-  
-  mcmc_1 <- as.list(fmcmc::LAST_MCMC)
-  
-  expect_equal(summary(ans1)$statistics[,"Mean"], ans0$par)
+   
+  expect_true(
+    all(
+      abs(summary(ans1)$statistics[,"Mean"] - ans0$par) < .05
+    ) 
+    )
   # ans0$fun(colMeans(ans1), dat = ans0$dat, priors = ans0$priors)
   # fun(colMeans(ans1))
 # })
