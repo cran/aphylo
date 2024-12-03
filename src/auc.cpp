@@ -28,8 +28,8 @@ using namespace Rcpp;
 //' plot(ans_auc)
 // [[Rcpp::export]]
 List auc(
-    NumericVector pred,
-    IntegerVector labels,
+    const NumericVector & pred,
+    const IntegerVector & labels,
     int nc = 200,
     bool nine_na = true
 ) {
@@ -109,10 +109,8 @@ List auc(
     FPR[i] /= n0;
     FNR[i] /= n1;
     
-    if (i == 0)
-      continue;
-    
-    auc += (TPR[i] + TPR[i - 1])*(FPR[i - 1] - FPR[i])/2.0;
+    if (i == 0) auc += (1+TPR[0])*(1 - FPR[0])/2.0;
+    else auc += (TPR[i] + TPR[i - 1])*(FPR[i - 1] - FPR[i])/2.0;
     
   }
   
